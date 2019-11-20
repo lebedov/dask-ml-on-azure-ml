@@ -27,6 +27,7 @@ digits = load_digits()
 x = digits.data
 y = digits.target
 
+# Obtain cross validation performance for single parameter setting:
 param_space = {
     'C': [1]
 }
