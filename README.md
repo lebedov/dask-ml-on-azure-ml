@@ -21,7 +21,7 @@ Instructions
 
 - [Create](https://docs.microsoft.com/en-us/azure/machine-learning/service/how-to-manage-workspace) a new Azure ML workspace
 
-- Clone this repository and create a `config.json` file in the repository directory containing your Azure ML subscription, tenant ID, resource group, and workspace name. The file should look like the following:
+- Clone this repository and create a `config.json` file in the repository directory containing your Azure ML subscription, tenant ID, resource group, workspace name, and your preferred names for the compute cluster and experiment. The file should look like the following:
 
         {
             "tenant_id": "WWWWWWWW-WWWW-WWWW-WWWW-WWWWWWWWWWWW",
