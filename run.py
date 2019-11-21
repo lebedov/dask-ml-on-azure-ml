@@ -60,10 +60,12 @@ use_estimator = True
 if use_estimator:
     if cv:
         script_params = {'--cv': cv}
-        node_count = cv+2 # dask-mpi uses 2 nodes for its scheduler and client 
+        node_count = cv+2 # dask-mpi uses 2 nodes for its scheduler and client
+        distributed_training = MpiConfiguration()
     else:
         script_params = None
         node_count = None
+        distributed_training = None
     to_run = Estimator(source_directory='.',
                        compute_target=compute_target,
                        entry_script='train.py',
@@ -71,7 +73,7 @@ if use_estimator:
                        node_count=node_count,
                        use_gpu=False,
                        conda_dependencies_file='env.yml',
-                       distributed_training=MpiConfiguration())
+                       distributed_training=distributed_training)
 else:
     if cv:
         arguments = ['--cv', str(cv)]
